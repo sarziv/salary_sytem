@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\MessageController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,6 +21,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::get('/account', 'AccountController@index')->name('account');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/message/replay/{id}','InboxController@replay')->name('inbox.replay');
+
+Route::get('/message/block/{id}','InboxController@block')->name('inbox.block');
+
+Route::resource('message', 'MessageController');

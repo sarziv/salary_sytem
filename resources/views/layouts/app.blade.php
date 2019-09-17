@@ -55,8 +55,14 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">
-                                        {{__('Message')}}
+                                    <a class="dropdown-item" href="/home">
+                                        {{__('Home')}}
+                                    </a>
+                                    <a class="dropdown-item" href="/account">
+                                        {{__('My information')}}
+                                    </a>
+                                    <a class="dropdown-item" href="{{route('message.index')}}">
+                                        {{__('Message center')}}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

@@ -1,6 +1,6 @@
 # P170B114_salary_sytem
 ### Lab Ataskaitos
-##### Lab ataskaitos folder
+[Galima rasti čia](https://github.com/sarziv/P170B113_salary_sytem/tree/master/Lab%20ataskaitos/lab1)
 
 ### Salary_system
 #### Login info

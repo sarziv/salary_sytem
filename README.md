@@ -4,6 +4,7 @@
 
 ### Salary_system
 #### Login info
+
 ##### user
  - Email: user@user.com
  - Password: password
@@ -14,6 +15,6 @@
    - Email: admin@admin.com
    - Password: password
   
-  Nepamirsk->
+  Nepamirsk pries naudojant ->
   `php artisan migrate:refresh --seed`
    

@@ -10644,3 +10644,8 @@ a.text-dark:focus {
   }
 }
 
+.functionPanel {
+  height: 5vh;
+  width: auto;
+}
+

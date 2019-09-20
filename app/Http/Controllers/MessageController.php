@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use App\Http\Requests\InboxStoreRequest;
@@ -14,8 +15,18 @@ class MessageController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $messages = DB::table('inboxes')->paginate(15);
-        return view('layouts.messageCenter.messageHome',['messages'=> $messages]);
+        $email = Auth::user()->email;
+         $blocked = DB::table('users_blockeds')->where('forUser',$email)->get();
+         $messages = DB::table('inboxes')->where('receiver' , $email)->get();
+        $filter = [];
+        dd($blocked);
+        foreach ($messages as $message){
+            if(in_array($message->sender,$blocked)){
+                continue;
+            }
+            $filter[] = $message;
+        }
+        return view('layouts.messageCenter.messageHome',['messages'=> $filter]);
     }
     /**
      * Show the form for creating a new resource.

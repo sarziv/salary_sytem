@@ -23,7 +23,7 @@ class InboxController extends Controller
         ]);
 
         $blockUser->save();
-        return redirect(route('home'))->with('success', 'User was blocked!');
+        return back()->with('success', 'User was blocked!');
     }
 
 }

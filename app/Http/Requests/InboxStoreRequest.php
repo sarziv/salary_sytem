@@ -32,7 +32,7 @@ class InboxStoreRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'sender.required' => 'No sender information..',
+            'sender.required' => 'No sender information.',
             'receiver.required' => 'No receiver information.',
             'message.required' => 'Message are missing.'
         ];

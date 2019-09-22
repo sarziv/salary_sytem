@@ -27,4 +27,6 @@ Route::get('/message/replay/{id}','InboxController@replay')->name('inbox.replay'
 
 Route::get('/message/block/{id}','InboxController@block')->name('inbox.block');
 
+Route::get('/message/delete/{id}','MessageController@destroy')->name('message.delete');
+
 Route::resource('message', 'MessageController');

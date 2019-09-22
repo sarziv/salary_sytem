@@ -14,7 +14,7 @@
                                 <tr>
                                     <th scope="col">Time</th>
                                     <th scope="col">Send by</th>
-                                    <th scope="">Functions</th>
+                                    <th scope="col">Functions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -27,7 +27,7 @@
                                            class="btn btn-primary">View</a>
                                         <a href="{{ route('inbox.replay',$message->id)}}"
                                            class="btn btn-success">Replay</a>
-                                        <a href="{{ route('message.destroy',$message->id)}}"
+                                        <a href="{{ route('message.delete',$message->id)}}"
                                            class="btn btn-warning">Delete</a>
                                         <a href="{{ route('inbox.block',$message->id)}}"
                                            class="btn btn-danger">Block sender</a>

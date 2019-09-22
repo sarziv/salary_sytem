@@ -8,26 +8,23 @@ use Illuminate\Pagination\Paginator;
 use App\Http\Requests\InboxStoreRequest;
 use Illuminate\Support\Facades\DB;
 use App\Inbox;
+
 class MessageController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     }
-    public function index(){
+
+    public function index()
+    {
         $email = Auth::user()->email;
-         $blocked = DB::table('users_blockeds')->where('forUser',$email)->get();
-         $messages = DB::table('inboxes')->where('receiver' , $email)->get();
-        $filter = [];
-        dd($blocked);
-        foreach ($messages as $message){
-            if(in_array($message->sender,$blocked)){
-                continue;
-            }
-            $filter[] = $message;
-        }
-        return view('layouts.messageCenter.messageHome',['messages'=> $filter]);
+        $blocked = DB::table('users_blockeds')->where('forUser', $email)->pluck('blockUser');
+        $messages = DB::table('inboxes')->where('receiver', $email)->whereNotIn('sender', $blocked)->paginate(15);
+
+        return view('layouts.messageCenter.messageHome', ['messages' => $messages]);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -37,6 +34,7 @@ class MessageController extends Controller
     {
         return view('layouts.messageCenter.messageCreate');
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -67,6 +65,7 @@ class MessageController extends Controller
         $message = Inbox::findorfail($id);
         return view('layouts.messageCenter.messageShow', compact('message'));
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -75,9 +74,10 @@ class MessageController extends Controller
      */
     public function edit($id)
     {
-        $message = Inboxes::findOrFail($id);
-        return view('layouts.messageCenter.messageEdit', compact('message'));
+        $message = Inbox::findOrFail($id);
+        return view('layouts.messageCenter.messageEdit', compact('message'))->with('success', 'Message updated.');
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -89,7 +89,7 @@ class MessageController extends Controller
     {
         //Validate request
         $validated = $request->validated();
-        $inbox = Inboxes::findorfail($id);
+        $inbox = Inbox::findorfail($id);
         $inbox->sender = $request->get('sender');
         $inbox->receiver = $request->get('receiver');
         $inbox->message = $request->get('message');
@@ -98,6 +98,7 @@ class MessageController extends Controller
         return redirect()->route('message')
             ->with('success', 'Message updated successfully');
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -106,7 +107,7 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-        $inbox = Inboxes::findOrFail($id);
+        $inbox = Inbox::findOrFail($id);
         $inbox->delete();
         return back()->with('error', 'Message was deleted!');
     }

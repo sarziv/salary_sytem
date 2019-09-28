@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -23,6 +24,23 @@ class AccountController extends Controller
      */
     public function index()
     {
-        return view('account');
+        return view('account.accountHome');
+    }
+
+    public function edit()
+    {
+
+        return view('account.accountEdit');
+    }
+    public function update(Request $request){
+
+        $user = User::findorfail(Auth::user()->id);
+        dd($user);
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+
+        $user->save();
+
+        return redirect('account.index')->with('success','Account information updated.');
     }
 }

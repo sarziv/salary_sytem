@@ -24,7 +24,6 @@ class InboxStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'sender' => 'required',
             'receiver' => 'required',
             'message' => 'required'
         ];
@@ -32,7 +31,6 @@ class InboxStoreRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'sender.required' => 'No sender information.',
             'receiver.required' => 'No receiver information.',
             'message.required' => 'Message are missing.'
         ];

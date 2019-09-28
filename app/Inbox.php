@@ -11,6 +11,6 @@ class Inbox extends Model
         'receiver',
         'message'
     ];
-    public $timestamps = false;
+    public $timestamps = true;
 
 }

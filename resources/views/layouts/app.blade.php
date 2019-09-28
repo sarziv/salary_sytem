@@ -61,7 +61,7 @@
                                     <a class="dropdown-item" href="/account">
                                         {{__('My information')}}
                                     </a>
-                                    <a class="dropdown-item" href="{{route('message.index')}}">
+                                    <a class="dropdown-item" href="{{route('inbox.index')}}">
                                         {{__('Message center')}}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"

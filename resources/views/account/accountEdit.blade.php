@@ -19,6 +19,7 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Save</th>
                                 </tr>
+
                                 </thead>
                                 <tbody>
                                 <tr>

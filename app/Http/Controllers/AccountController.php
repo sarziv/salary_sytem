@@ -32,15 +32,19 @@ class AccountController extends Controller
 
         return view('account.accountEdit');
     }
-    public function update(Request $request){
+    public function update(Request $request,$id){
 
-        $user = User::findorfail(Auth::user()->id);
-        dd($user);
+        $request->validate([
+            "name"=> 'required',
+            "email"=> 'required'
+        ]);
+
+        $user = User::findorfail($id);
         $user->name = $request->get('name');
         $user->email = $request->get('email');
 
         $user->save();
 
-        return redirect('account.index')->with('success','Account information updated.');
+        return redirect(route('account.index'))->with('success','Account information updated.');
     }
 }

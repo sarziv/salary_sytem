@@ -14,6 +14,7 @@
                     <div class="card-body">
                         <div class="text-center">
                             <table class="table">
+                                @if(!isset($messages))
                                 <thead>
                                 <tr>
                                     <th scope="col">Time</th>
@@ -38,6 +39,9 @@
                                     </th>
                                 </tr>
                                     @endforeach
+                                    @else
+                                        <div>No messages</div>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

@@ -90,7 +90,6 @@ class InboxController extends Controller
      */
     public function update(InboxStoreRequest $request, $id)
     {
-        //Validate request
         $validated = $request->validated();
         $inbox = Inbox::findorfail($id);
         $inbox->sender = $request->get('sender');

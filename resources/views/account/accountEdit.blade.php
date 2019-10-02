@@ -8,7 +8,8 @@
                     <div class="card-header text-center">Edit user information</div>
 
                     <div class="card-body">
-                        <form method="post" action="{{ route('account.update') }}">
+                        <form method="post" action="{{ route('account.update',Auth::user()->id) }}">
+                            @csrf
                         <div class="text-center">
                             <table class="table">
                                 <thead>

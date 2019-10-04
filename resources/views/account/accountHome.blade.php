@@ -21,10 +21,11 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th scope="row">{{Auth::user()->id}}</th>
-                                    <td>{{Auth::user()->type}}</td>
-                                    <td>{{Auth::user()->name}}</td>
-                                    <td>{{Auth::user()->email}}</td>
+                                    <th scope="row">{{$user->id}}</th>
+                                    <td>{{$user->type}}</td>
+                                    <td>{{$user->name}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td>{{$user->birthday}}</td>
                                     <td>
                                         <a href="{{route('account.edit')}}" class="btn btn-primary">Edit</a>
                                     </td>

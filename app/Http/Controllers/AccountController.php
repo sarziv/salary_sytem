@@ -24,7 +24,8 @@ class AccountController extends Controller
      */
     public function index()
     {
-        return view('account.accountHome');
+        $user = User::findorfail(Auth::user()->id);
+        return view('account.accountHome',['user' => $user]);
     }
 
     public function edit()

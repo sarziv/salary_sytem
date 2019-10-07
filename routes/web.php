@@ -26,7 +26,7 @@ Route::get('/account', 'AccountController@index')->name('account.index');
 
 Route::get('/account/edit', 'AccountController@edit')->name('account.edit');
 
-Route::post('/account/update/{id}', 'AccountController@update')->name('account.update');
+Route::post('/account/update', 'AccountController@update')->name('account.update');
 
 Route::get('/message','InboxController@index')->name('inbox.index');
 

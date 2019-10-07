@@ -1,13 +1,20 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import "loading";
 
-.functionPanel{
+.functionPanel {
     height: 5vh;
     width: auto;
+}
+
+.flash-message {
+    right: 5vw;
+    top: 8vh;
+    width: 20vw;
+    height: 5vh;
+    position: fixed;
 }

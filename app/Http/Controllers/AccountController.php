@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
 {
@@ -25,27 +26,29 @@ class AccountController extends Controller
     public function index()
     {
         $user = User::findorfail(Auth::user()->id);
-        return view('account.accountHome',['user' => $user]);
+        return view('account.accountHome', ['user' => $user]);
     }
 
     public function edit()
     {
-
-        return view('account.accountEdit');
+        $user = User::findorfail(Auth::user()->id);
+        return view('account.accountEdit', ['user' => $user]);
     }
-    public function update(Request $request,$id){
+
+    public function update(Request $request)
+    {
 
         $request->validate([
-            "name"=> 'required',
-            "email"=> 'required'
+            "name" => 'required',
+            "birthday"=>"required"
         ]);
 
-        $user = User::findorfail($id);
+        $user = User::findorfail(Auth::user()->id);
         $user->name = $request->get('name');
-        $user->email = $request->get('email');
+        $user->birthday = $request->get('birthday');
 
         $user->save();
 
-        return redirect(route('account.index'))->with('success','Account information updated.');
+        return redirect(route('account.index'))->with('success', 'Account information updated.');
     }
 }

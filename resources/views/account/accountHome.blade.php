@@ -16,6 +16,7 @@
                                     <th scope="col">Type</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
+                                    <th scope="col">Birthday</th>
                                     <th scope="col">Edit</th>
                                 </tr>
                                 </thead>

@@ -19,26 +19,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Sarunas Routes
+//Message system branch
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/account', 'AccountController@index')->name('account.index');
-
 Route::get('/account/edit', 'AccountController@edit')->name('account.edit');
-
 Route::post('/account/update', 'AccountController@update')->name('account.update');
-
 Route::get('/message','InboxController@index')->name('inbox.index');
-
 Route::get('/message/replay/{id}','InboxController@replay')->name('inbox.replay');
-
 Route::get('/message/show/{id}','InboxController@show')->name('inbox.show');
-
 Route::get('/message/block/{id}','InboxController@block')->name('inbox.block');
-
 Route::get('/message/delete/{id}','InboxController@destroy')->name('inbox.delete');
-
 Route::post('/message/store','InboxController@store')->name('inbox.store');
-
 Route::get('/message/create','InboxController@create')->name('inbox.create');
 
+//User system branch
+Route::get('/home', 'CityController@index');
+Route::post('/additional/store', 'AdditionalController@store')->name('additional.store');

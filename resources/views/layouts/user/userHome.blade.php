@@ -1,3 +1,4 @@
+@if((Auth::user()->additional_id > 0))
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -12,11 +13,10 @@
                     @endif
                         <div class="col-md-12">
                             <div class="pb-3">
-                                <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Nauja ataskaita</div>
-                                <div class="btn btn-outline-dark  col-2 offset-5 mr-1 mb-1">Ataskaitu istorija</div>
-                                <div class="btn btn-outline-dark  col-2 offset-5 mr-1 mb-1">Darbo grafikas</div>
-                                <div class="btn btn-outline-dark  col-2 offset-5 mr-1 mb-1">Atlyginimas</div>
-                                <div class="btn btn-outline-dark  col-2 offset-5 mr-1 mb-1">Atostogu prasymas</div>
+                                <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Reports</div>
+                                <div class="btn btn-outline-dark  col-2 offset-5 mr-1 mb-1">Work schedule</div>
+                                <div class="btn btn-outline-dark  col-2 offset-5 mr-1 mb-1">Salary List</div>
+
                             </div>
                         </div>
                 </div>
@@ -24,3 +24,6 @@
         </div>
     </div>
 </div>
+@else
+    @include('layouts.user.userAdditionalInformation')
+@endif

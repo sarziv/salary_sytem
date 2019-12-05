@@ -10,7 +10,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="position">Position</label>
-                        <input name="position" type="position" class="form-control" id="position" aria-describedby="position">
+                        <input name="position" type="text" class="form-control" id="position" aria-describedby="position">
                     </div>
                     <div class="form-group">
                         <label for="user_info">More about you!</label>

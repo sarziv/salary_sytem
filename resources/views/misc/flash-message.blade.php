@@ -36,4 +36,4 @@
         Computer monkeys for error!
     </div>
 @endif
-© 2019 GitHub, Inc.
+

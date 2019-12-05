@@ -10734,10 +10734,11 @@ a.text-dark:focus {
 }
 
 .flash-message {
-  right: 5vw;
-  top: 8vh;
-  width: 20vw;
+  text-align: center;
+  z-index: 999;
+  width: 60vw;
   height: 5vh;
-  position: fixed;
+  margin-left: 20vw;
+  position: relative;
 }
 

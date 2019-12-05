@@ -35,3 +35,10 @@ Route::get('/message/create','InboxController@create')->name('inbox.create');
 //User system branch
 Route::get('/home', 'CityController@index');
 Route::post('/additional/store', 'AdditionalController@store')->name('additional.store');
+Route::get('/user/report','ReportController@index')->name('report.index');
+Route::get('/user/report/create','ReportController@create')->name('report.create');
+Route::get('/user/report/show/{id}','ReportController@show')->name('report.show');
+Route::post('/user/report/store','ReportController@store')->name('report.store');
+Route::get('/user/report/edit/{id}','ReportController@edit')->name('report.edit');
+Route::get('/user/report/delete/{id}','ReportController@destroy')->name('report.destroy');
+Route::post('/user/report/update','ReportController@update')->name('report.update');

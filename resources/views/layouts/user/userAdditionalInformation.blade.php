@@ -8,15 +8,20 @@
             <div class="card-body">
                 <form method="post" action="{{ route('additional.store') }}">
                     @csrf
+
                     <div class="form-group">
-                        <label for="position">Position</label>
-                        <input name="position" type="text" class="form-control" id="position" aria-describedby="position">
+                        <label for="position">Work position</label>
+                        <select class="form-control" id="position" name="position">
+                            @foreach($jobs as $job)
+                                <option name="position" value="{{$job->id}}">{{$job->type}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="user_info">More about you!</label>
                         <textarea name="user_info" type="text" class="form-control" id="user_info"></textarea>
                     </div>
-                    <h5 class="text-center">Your work hours are flexible so enter them here!</h5>
+                    <h5 class="text-center">Enter your flexible work hours!</h5>
                     <div class="row">
                     <div class="form-group col-6">
                         <label for="work_start">Start time (Morning AM)</label>

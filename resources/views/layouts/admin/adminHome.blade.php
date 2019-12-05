@@ -12,11 +12,8 @@
                     @endif
                     <div class="col-md-12">
                         <div class="pb-3">
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Admin funkcija 1</div>
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Admin funkcija 2</div>
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Admin funkcija 3</div>
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Admin funkcija 4</div>
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Admin funkcija 5</div>
+                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">User management</div>
+                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">User schedules management</div>
                         </div>
                     </div>
                 </div>

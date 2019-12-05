@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Support\Facades\DB;
 use App\City;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 class CityController extends Controller
 {
     /**

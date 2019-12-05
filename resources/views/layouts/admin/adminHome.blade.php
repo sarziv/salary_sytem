@@ -12,8 +12,8 @@
                     @endif
                     <div class="col-md-12">
                         <div class="pb-3">
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">User management</div>
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">User schedules management</div>
+                            <a href="{{route('adminUser.index')}}" class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">User management</a>
+                            <a href="{{route('adminSchedule.index')}}" class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">User schedules management</a>
                         </div>
                     </div>
                 </div>

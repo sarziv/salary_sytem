@@ -14,8 +14,8 @@
                         <div class="col-md-12">
                             <div class="pb-3">
                                 <a href="{{route('report.index')}}" class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Reports</a>
-                                <a class="btn btn-outline-dark  col-2 offset-5 mr-1 mb-1">Work schedule(admin dalis)</a>
-                                <a class="btn btn-outline-dark  col-2 offset-5 mr-1 mb-1">Salary List(Buhalterijos dalis)</a>
+                                <a href="{{route('additional.schedule')}}" class="btn btn-outline-dark  col-2 offset-5 mr-1 mb-1">Work schedule</a>
+                                <a class="btn btn-outline-dark  col-2 offset-5 mr-1 mb-1">Salary List</a>
 
                             </div>
                         </div>

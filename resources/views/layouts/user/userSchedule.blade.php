@@ -1,7 +1,5 @@
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
-
-<h3>Calendar</h3>
-
+a<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+<h3>My Calendar</h3>
 <div id='calendar'></div>
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -17,8 +15,7 @@
                 {
                     title : '{{ $task->name }}',
                     start : '{{ $task->task_date }}',
-                    description : '{{ $task->description }}',
-                    url : '{{ route('adminSchedule.edit', $task->id) }}'
+                    description : '{{ $task->description }}'
                 },
                 @endforeach
             ]

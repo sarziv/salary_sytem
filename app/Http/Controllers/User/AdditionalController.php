@@ -43,4 +43,8 @@ class AdditionalController extends Controller
 
         return redirect('/home')->with('success', 'You can now start Working!');
     }
+    public function schedule(){
+        $calendars = DB::table('calendars')->where('calendars.user_id','=', Auth::user()->id)->get();
+        return view('layouts.user.userSchedule', compact('calendars'));
+    }
 }

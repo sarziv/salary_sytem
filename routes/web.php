@@ -34,6 +34,7 @@ Route::get('/message/create','System\InboxController@create')->name('inbox.creat
 
 //User system branch
 Route::get('/home', 'User\CityController@index');
+Route::get('/user/schedule','User\AdditionalController@schedule')->name("additional.schedule");
 Route::post('/additional/store', 'User\AdditionalController@store')->name('additional.store');
 Route::get('/user/report','User\ReportController@index')->name('report.index');
 Route::get('/user/report/create','User\ReportController@create')->name('report.create');

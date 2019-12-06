@@ -21,6 +21,7 @@
                                         <th scope="col">ID</th>
                                         <th scope="col">Type</th>
                                         <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
                                         <th scope="col">Functions</th>
                                     </tr>
                                     </thead>
@@ -30,6 +31,7 @@
                                             <th scope="row">{{ $user->id }}</th>
                                             <th scope="row">{{ $user->type }}</th>
                                             <th scope="row">{{ $user->name }}</th>
+                                            <th scope="row">{{ $user->email}} </th>
                                             <th scope="row">
                                                 <a href="{{ route('adminUser.show',$user->id)}}"
                                                    class="btn btn-primary">View</a>

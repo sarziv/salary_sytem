@@ -58,11 +58,11 @@ Route::get('/admin/user/additonal/{id}','Admin\AdminUserController@additionalSho
 
 //schedule manage
 Route::get('/admin/schedule','Admin\AdminScheduleController@index')->name('adminSchedule.index');
-Route::get('/admin/schedule/create','Admin\AdminScheduleController@create')->name('adminSchedule.create');
+Route::get('/admin/schedule/create/{id}','Admin\AdminScheduleController@create')->name('adminSchedule.create');
 Route::get('/admin/schedule/show/{id}','Admin\AdminScheduleController@show')->name('adminSchedule.show');
 Route::post('/admin/schedule/store','Admin\AdminScheduleController@store')->name('adminSchedule.store');
-Route::get('/admin/schedule/{id}','Admin\AdminScheduleController@edit')->name('adminSchedule.edit');
+Route::get('/admin/schedule/edit/{id}','Admin\AdminScheduleController@edit')->name('adminSchedule.edit');
 Route::get('/admin/schedule/delete/{id}','Admin\AdminScheduleController@destroy')->name('adminSchedule.destroy');
-Route::post('/admin/schedule/update','Admin\AdminScheduleController@update')->name('adminSchedule.update');
+Route::post('/admin/schedule/update/{id}','Admin\AdminScheduleController@update')->name('adminSchedule.update');
 
 //todo accountant

@@ -12,6 +12,7 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
                                     <th scope="col">Type</th>
                                     <th scope="col">Birthday</th>
                                     <th scope="col">Additional</th>
@@ -22,6 +23,7 @@
                                 <tr>
                                     <th scope="row">{{ $user->name }}</th>
                                     <th scope="row">{{ $user->type}} </th>
+                                    <th scope="row">{{ $user->email}} </th>
                                     <th scope="row">{{ $user->birthday }} </th>
                                         @if(is_int($user->additional_id))
                                             <th>

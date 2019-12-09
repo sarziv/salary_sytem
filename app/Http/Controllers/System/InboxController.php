@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class InboxController extends Controller
 {
@@ -53,6 +54,17 @@ class InboxController extends Controller
             'receiver' => $request->get('receiver'),
             'message' => $request->get('message')
         ]);
+        $receiver = $request->get('message');
+        $data = [
+            "user"=> Auth::user()->email,
+        ];
+
+        Mail::send('layouts.email', $data, function($message)
+        {
+
+            $message->to('Algiukas@international')
+                ->subject('New message from Algiukas');
+        });
 
         $inbox->save();
         return redirect('/message')->with('success', 'Message was send.');

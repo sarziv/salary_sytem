@@ -17,7 +17,7 @@
                                     <tr>
                                         <th scope="col">ID</th>
                                         <th scope="col">Place</th>
-                                        <th scope="col">Done by hour</th>
+                                        <th scope="col">Efficiency</th>
                                         <th scope="col">Approve</th>
                                     </tr>
                                     </thead>

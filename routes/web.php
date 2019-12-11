@@ -35,6 +35,8 @@ Route::get('/message/create','System\InboxController@create')->name('inbox.creat
 //User system branch
 Route::get('/home', 'User\CityController@index');
 Route::get('/user/schedule','User\AdditionalController@schedule')->name("additional.schedule");
+Route::get('/user/salary','User\AdditionalController@salary')->name("additional.salary");
+
 Route::post('/additional/store', 'User\AdditionalController@store')->name('additional.store');
 Route::get('/user/report','User\ReportController@index')->name('report.index');
 Route::get('/user/report/create','User\ReportController@create')->name('report.create');
@@ -70,3 +72,4 @@ Route::post('/admin/schedule/update/{id}','Admin\AdminScheduleController@update'
 Route::get('/accountant/approve','Accountant\ApproveController@index')->name('accountant.index');
 Route::get('/accountant/approve/{id}','Accountant\ApproveController@approve')->name('accountant.approve');
 Route::get('/accountant/salary','Accountant\AccountantSalaryController@index')->name('accountant.salary');
+Route::post('/accountant/pay/{id}','Accountant\AccountantSalaryController@pay')->name('accountant.pay');

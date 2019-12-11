@@ -47,4 +47,9 @@ class AdditionalController extends Controller
         $calendars = DB::table('calendars')->where('calendars.user_id','=', Auth::user()->id)->get();
         return view('layouts.user.userSchedule', compact('calendars'));
     }
+
+    public function salary(){
+        $salaries = DB::table('salary')->where('salary.user_id','=', Auth::user()->id)->get();
+        return view('layouts.user.userSalary', compact('salaries'));
+    }
 }

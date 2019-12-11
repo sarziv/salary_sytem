@@ -12,11 +12,9 @@
                     @endif
                     <div class="col-md-12">
                         <div class="pb-3">
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Buhalterija funkcija 1</div>
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Buhalterija funkcija 2</div>
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Buhalterija funkcija 3</div>
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Buhalterija funkcija 4</div>
-                            <div class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Buhalterija funkcija 5</div>
+                            <a href="{{route('accountant.index')}}" class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Notes on Users</a>
+                            <a  href="{{route('accountant.index')}}" class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Approve reports</a>
+                            <a href="{{route('accountant.salary')}}" class="btn btn-outline-dark col-2 offset-5 mr-1 mb-1">Calculate users salary</a>
                         </div>
                     </div>
                 </div>

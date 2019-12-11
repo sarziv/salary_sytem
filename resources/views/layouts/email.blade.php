@@ -8,8 +8,11 @@
 <body>
 Hi,
 <br>
-You received message from on Algiukas!
-User: {{ $user }}
+You received message on Algiukas!
+<br>
+ From User: {{ $user }}
+<br>
+ Message: {{ $content }}
 <br>
 Best Regards
 </body>

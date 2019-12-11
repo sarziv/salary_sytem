@@ -66,4 +66,7 @@ Route::get('/admin/schedule/edit/{id}','Admin\AdminScheduleController@edit')->na
 Route::get('/admin/schedule/delete/{id}','Admin\AdminScheduleController@destroy')->name('adminSchedule.destroy');
 Route::post('/admin/schedule/update/{id}','Admin\AdminScheduleController@update')->name('adminSchedule.update');
 
-//todo accountant
+//accountant branch
+Route::get('/accountant/approve','Accountant\ApproveController@index')->name('accountant.index');
+Route::get('/accountant/approve/{id}','Accountant\ApproveController@approve')->name('accountant.approve');
+Route::get('/accountant/salary','Accountant\AccountantSalaryController@index')->name('accountant.salary');

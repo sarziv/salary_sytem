@@ -54,16 +54,17 @@ class InboxController extends Controller
             'receiver' => $request->get('receiver'),
             'message' => $request->get('message')
         ]);
-        $receiver = $request->get('message');
+
         $data = [
-            "user"=> Auth::user()->email,
+            "user" => Auth::user()->email,
+            "to" => $request->get('receiver'),
+            "content" => $request->get('message')
         ];
 
-        Mail::send('layouts.email', $data, function($message)
-        {
+        Mail::send('layouts.email', $data, function ($message) use ($data) {
 
-            $message->to('Algiukas@international')
-                ->subject('New message from Algiukas');
+            $message->to($data['to'])
+                ->subject("New message from Algiukas!");
         });
 
         $inbox->save();
@@ -127,7 +128,8 @@ class InboxController extends Controller
         return back()->with('error', 'Message was deleted!');
     }
 
-    public function replay($id){
+    public function replay($id)
+    {
         $message = Inbox::findorfail($id);
         return view('layouts.messageCenter.messageReplay', compact('message'));
     }

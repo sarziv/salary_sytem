@@ -69,7 +69,17 @@ Route::get('/admin/schedule/delete/{id}','Admin\AdminScheduleController@destroy'
 Route::post('/admin/schedule/update/{id}','Admin\AdminScheduleController@update')->name('adminSchedule.update');
 
 //accountant branch
+//accountant approve
 Route::get('/accountant/approve','Accountant\ApproveController@index')->name('accountant.index');
 Route::get('/accountant/approve/{id}','Accountant\ApproveController@approve')->name('accountant.approve');
+//accountant salary
 Route::get('/accountant/salary','Accountant\AccountantSalaryController@index')->name('accountant.salary');
 Route::post('/accountant/pay/{id}','Accountant\AccountantSalaryController@pay')->name('accountant.pay');
+//accountant notes
+Route::get('/accountant/notes','Accountant\AccountantNoteController@index')->name('accountantNote.index');
+Route::get('/accountant/notes/create/{id}','Accountant\AccountantNoteController@create')->name('accountantNote.create');
+Route::get('/accountant/notes/show/{id}','Accountant\AccountantNoteController@show')->name('accountantNote.show');
+Route::post('/accountant/notes/store','Accountant\AccountantNoteController@store')->name('accountantNote.store');
+Route::get('/accountant/notes/edit/{id}','Accountant\AccountantNoteController@edit')->name('accountantNote.edit');
+Route::get('/accountant/notes/delete/{id}','Accountant\AccountantNoteController@destroy')->name('accountantNote.destroy');
+Route::post('/accountant/notes/update','Accountant\AccountantNoteController@update')->name('accountantNote.update');

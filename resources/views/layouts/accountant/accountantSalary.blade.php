@@ -12,7 +12,7 @@
                         <div class="text-center">
                             <table class="table">
                                 @if(empty($reports[0]))
-                                    <div>Nothing to show</div>
+                                    <div>No salaries to pay, maybe go approve more reports ->  <a href="{{ route('accountant.index') }}">Here</a></div>
                                 @else
                                     <thead>
                                     <tr>
